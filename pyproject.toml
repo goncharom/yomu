@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yomu"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.13.4",
+    "croniter>=6.0.0",
+    "pyyaml>=6.0.0",
+    "requests>=2.31.0",
+    "lxml>=5.0.0",
+    "python-dotenv>=1.1.1",
+    "pydantic>=2.11.9",
+    "hikugen>=0.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "ruff>=0.12.10",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/yomu"]

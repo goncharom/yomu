@@ -1,0 +1,50 @@
+# Yomu Newsletter Configuration Example
+# Copy this file to 'config.yaml' and customize for your needs
+
+# API Configuration
+openrouter_api_key: "your-openrouter-api-key-here"
+sender_email: "your-email@gmail.com"
+sender_password: "your-app-password"
+
+# SMTP Configuration
+smtp_server: "smtp.gmail.com"
+smtp_port: 587
+
+# Optional settings
+cookie_file_path: "/optional/path/to/cookies.txt"  # Optional: for authenticated web scraping
+
+# Newsletter Configuration
+recipient_email: "recipient@example.com"  # Where newsletters will be sent
+
+# You can use the same email as both sender and recipient
+
+# List of content sources to monitor
+# Yomu extracts content from any webpage using LLM-powered extraction
+sources:
+  # Example sources:
+  - "https://feeds.feedburner.com/oreilly/radar"
+  - "https://rss.cnn.com/rss/edition.rss"
+  - "https://news.ycombinator.com"
+  - "https://www.reddit.com/r/all.rss"
+
+  # Add your own sources here...
+
+# Newsletter frequency schedules (cron expressions)
+frequencies:
+  - "45 7 * * *"    # Daily at 7:45 AM
+  - "0 17 * * *"    # Daily at 5:00 PM
+
+# Examples of frequency options:
+# "0 9 * * *"     - Daily at 9 AM
+# "0 9 * * 1"     - Weekly on Mondays at 9 AM
+# "0 9,21 * * *"  - Twice daily at 9 AM and 9 PM
+# "0 9 1 * *"     - Monthly on the 1st at 9 AM
+# "0 9 * * 1,3,5" - Mon, Wed, Fri at 9 AM
+
+# Maximum articles to include per source (optional)
+# Helps keep newsletters manageable in size
+max_articles_per_source: 10  # Default: 3 if not specified
+
+# Maximum character length for article descriptions (optional)
+# Descriptions longer than this will be truncated with ellipsis
+max_description_length: 200  # Default: 200 if not specified

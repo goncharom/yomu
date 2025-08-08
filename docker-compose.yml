@@ -1,0 +1,9 @@
+services:
+  yomu:
+    build: .
+    container_name: yomu-newsletter
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=America/Los_Angeles
+    restart: no
